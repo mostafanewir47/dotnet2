@@ -6,7 +6,7 @@ phases:
       - echo Logging in to Amazon ECR...
       - aws --version
       - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
-      - REPOSITORY_URI=211119714397.dkr.ecr.eu-west-1.amazonaws.com/hello 
+      - REPOSITORY_URI=211119714397.dkr.ecr.eu-west-1.amazonaws.com/hello
       - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
   build:
     commands:
